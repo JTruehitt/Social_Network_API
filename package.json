@@ -1,0 +1,29 @@
+{
+  "name": "social_network_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JTruehitt/Social_Network_API.git"
+  },
+  "keywords": [],
+  "author": "Jon Truehitt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JTruehitt/Social_Network_API/issues"
+  },
+  "homepage": "https://github.com/JTruehitt/Social_Network_API#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
