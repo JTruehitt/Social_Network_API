@@ -10,7 +10,7 @@ const userSchema = new Schema(
       trim: true,
       validate: {
         validator: (username) => {
-            return username.trim().length > 0;
+            return username.length > 0;
         },
         message: 'Please enter a username',
       },
@@ -44,6 +44,7 @@ const userSchema = new Schema(
       virtuals: true,
     },
     id: false,
+    timestamps: true,
   }
 );
 
