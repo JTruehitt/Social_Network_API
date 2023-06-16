@@ -1,4 +1,19 @@
-import { getAllUsers, getUserById, createUser } from "./user-controller.js";
+import {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+  addFriend,
+  removeFriend,
+} from './user-controller.js';
 
-
-export { getAllUsers, getUserById, createUser}
+export {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+  addFriend,
+  removeFriend,
+};
