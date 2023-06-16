@@ -1,5 +1,5 @@
 import { Schema, ObjectId } from 'mongoose';
-import dateFormat from '../utils/dateFormat';
+import dateFormat from '../utils/date-format.js';
 
 const reactionSchema = new Schema(
   {
@@ -15,7 +15,7 @@ const reactionSchema = new Schema(
     },
     username: {
       type: String,
-      required: [true, 'Please enter a username'],
+      required: true,
       trim: true,
     },
     createdAt: {
@@ -29,6 +29,7 @@ const reactionSchema = new Schema(
     toJSON: {
       getters: true,
     },
+    timestamps: true,
     id: false,
   }
 );
