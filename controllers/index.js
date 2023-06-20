@@ -8,6 +8,16 @@ import {
   removeFriend,
 } from './user-controller.js';
 
+import {
+  getAllThoughts,
+  getThoughtById,
+  createThought,
+  updateThought,
+  deleteThought,
+  createReaction,
+  deleteReaction,
+} from './thought-controller.js';
+
 export {
   getAllUsers,
   getUserById,
@@ -16,4 +26,11 @@ export {
   deleteUser,
   addFriend,
   removeFriend,
+  getAllThoughts,
+  getThoughtById,
+  createThought,
+  updateThought,
+  deleteThought,
+  createReaction,
+  deleteReaction,
 };
