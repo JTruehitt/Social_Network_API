@@ -75,12 +75,11 @@ const updateUser = async (req, res) => {
 // @access  Public
 const deleteUser = async (req, res) => {
   try {
-    const userData = await User.findOneAndDelete({ _id: req.params.id });
+    const userData = await User.findByIdAndDelete(req.params.id);
     if (!userData) {
       res.status(404).json({ message: 'No user found with this id' });
       return;
     }
-    // if user founds, delete associated thoughts
     await Thought.deleteMany({ username: userData.username });
     res.status(200).json({
       message: `User ${userData.username} and associated thoughts deleted`,

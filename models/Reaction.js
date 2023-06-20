@@ -1,10 +1,10 @@
-import { Schema, ObjectId } from 'mongoose';
+import { Schema, Types } from 'mongoose';
 import dateFormat from '../utils/date-format.js';
 
 const reactionSchema = new Schema(
   {
     reactionId: {
-      type: ObjectId,
+      type: Types.ObjectId,
       default: () => new ObjectId(),
     },
     reactionBody: {
