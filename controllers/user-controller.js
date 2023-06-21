@@ -22,7 +22,7 @@ const getAllUsers = async (req, res) => {
 // @access  Public
 const getUserById = async (req, res) => {
   try {
-    const userData = await User.findOne({ _id: req.params.id })
+    const userData = await User.findById(req.params.id)
       .populate('thoughts')
       .populate('friends');
     if (!userData) {
@@ -139,5 +139,5 @@ export {
   updateUser,
   deleteUser,
   addFriend,
-  removeFriend
+  removeFriend,
 };

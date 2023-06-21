@@ -94,7 +94,7 @@ const deleteThought = async (req, res) => {
     }
     const dbUserData = await User.findOneAndUpdate(
       { username: dbThoughtData.username },
-      { $pull: { thoughts: { _id: dbThoughtData._id} } },
+      { $pull: { thoughts: { _id: dbThoughtData._id } } },
       { new: true }
     );
     if (!dbUserData) {
@@ -134,22 +134,21 @@ const createReaction = async (req, res) => {
 // @route   DELETE /api/thoughts/:thoughtId/reactions/:reactionId
 // @access  Public
 const deleteReaction = async (req, res) => {
-    try {
-        const dbThoughtData = await Thought.findByIdAndUpdate(
-        req.params.thoughtId,
-        { $pull: { reactions: { _id: req.params.reactionId } } },
-        { new: true }
-        );
-        if (!dbThoughtData) {
-        res.status(404).json({ message: 'No thought found with this id!' });
-        return;
-        }
-        res.status(200).json({ message: 'Reaction deleted!' });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+  try {
+    const dbThoughtData = await Thought.findByIdAndUpdate(
+      req.params.thoughtId,
+      { $pull: { reactions: { _id: req.params.reactionId } } },
+      { new: true }
+    );
+    if (!dbThoughtData) {
+      res.status(404).json({ message: 'No thought found with this id!' });
+      return;
     }
-  
+    res.status(200).json({ message: 'Reaction deleted!' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 };
 
 export {
